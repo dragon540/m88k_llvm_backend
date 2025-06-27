@@ -107,6 +107,7 @@ public:
     renderscript32, // 32-bit RenderScript
     renderscript64, // 64-bit RenderScript
     ve,             // NEC SX-Aurora Vector Engine
+    m88k,           // M88000 (big endian)
     LastArchType = ve
   };
   enum SubArchType {
@@ -1096,6 +1097,10 @@ public:
   /// Tests whether the target is x86 (32- or 64-bit).
   bool isX86() const {
     return getArch() == Triple::x86 || getArch() == Triple::x86_64;
+  }
+
+  bool isM88k() const {
+    return getArch() == Triple::m88k;
   }
 
   /// Tests whether the target is VE
