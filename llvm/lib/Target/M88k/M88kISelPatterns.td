@@ -1,0 +1,1 @@
+def : Pat<(add GPR:$a, GPR:$b), ADDrr(GPR:$a, GPR:$b)>;
